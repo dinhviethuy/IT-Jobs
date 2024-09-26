@@ -1,18 +1,22 @@
 import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {getJob} from "../../services/jobServices.jsx";
-import {Tag, Card} from "antd";
+import {Tag, Card, Row, Spin} from "antd";
 import GoBack from "../../components/GoBack/GoBack.jsx";
 
-function ViewJob(props) {
+function ViewJob() {
   const param = useParams();
   const [data, setData] = useState({});
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchApi = async () => {
       const response = await getJob(parseInt(param.id));
       setData(response);
     }
     fetchApi();
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000)
   }, [])
   return (
     <>
@@ -42,7 +46,13 @@ function ViewJob(props) {
             </Card>
           </div>
         </>
-      ) : (<>ddd</>)}
+      ) : (<>
+        <div className="content-admin">
+          {loading ? <Row justify="center">
+            <Spin spinning={loading}/>
+          </Row> : (<h3 style={{textAlign: "center"}}>Không có dữ liệu</h3>)}
+        </div>
+      </>)}
 
     </>
   )
