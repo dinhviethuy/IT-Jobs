@@ -1,0 +1,18 @@
+.header {
+  background: #EFF2F1;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  .inner-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.4em 0;
+    align-items: center;
+    .logo-text {
+      font-size: 1.6rem;
+      font-weight: 900;
+    }
+  }
+}
