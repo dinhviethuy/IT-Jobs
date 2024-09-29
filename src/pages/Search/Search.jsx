@@ -55,7 +55,7 @@ function Search() {
   }
   return (
     <>
-      <Row justify="center" gutter={[20, 20]}>
+      <Row justify="center">
         <Col xxl={20} xl={20} lg={20} md={20} sm={20} xs={20}>
           <GoBack/>
         </Col>
