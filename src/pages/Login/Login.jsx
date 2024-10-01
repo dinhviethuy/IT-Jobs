@@ -60,7 +60,7 @@ const Login = () => {
                   },
                 ]}
               >
-                <Input/>
+                <Input placeholder="dinhviethuy055@gmail.com"/>
               </Form.Item>
               <Form.Item
                 label="Password"
@@ -72,7 +72,7 @@ const Login = () => {
                   },
                 ]}
               >
-                <Input.Password/>
+                <Input.Password placeholder="123456"/>
               </Form.Item>
               <Form.Item
                 wrapperCol={{
